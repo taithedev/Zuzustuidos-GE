@@ -1,31 +1,53 @@
 # ZuzuStudios Game Engine
 
-A beginner-focused open-source **C# + Lua 3D game engine prototype**, including a visual scene editor, scripting runtime, example scenes, reference scripts, and tutorials.
-
-> Status: early prototype. It does **not** yet match Unity's capabilities. This repository tracks implemented features separately from planned ones.
+A beginner-focused **C# + Lua 3D game engine prototype** with a visual scene editor, sample project, and approachable tutorials. The repository is structured by actual features and examples rather than placeholders.
 
 ## Quick start
 
-1. Install the free .NET 8 SDK.
-2. Clone this repository.
-3. On Windows, run `run.bat`. On other platforms, run `dotnet run --project src/ZuzuStudios/ZuzuStudios.csproj -- --project projects/StarterProject`.
-4. Press **F5** to toggle Play/Stop. Press **Ctrl+S** to save.
+1. Install the free [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
+2. Clone this repository and launch `run.bat` on Windows, or `bash run.sh` on Linux/macOS.
+3. Click an object in the left hierarchy, adjust transforms in the inspector, then press **Ctrl+S** to save.
+4. Press **F5** to Play and use arrow keys to move the player; F5 again restores the editor state.
+5. Read [Getting Started](docs/GETTING_STARTED.md) and the [48 hands-on lessons](docs/tutorials/README.md).
 
-See `docs/GETTING_STARTED.md` and `docs/tutorials` for step-by-step help.
+## What is implemented
 
-## Working features
+- Resizable 3D viewport with cubes, spheres, a grid, basic object picking and fly-camera controls.
+- Scene hierarchy, entity inspector, add/rename/delete/duplicate, transform editing, save/load JSON.
+- Play/Stop isolation, C# `Behaviour` scripting and restricted MoonSharp Lua with `start()`/`update(dt)`.
+- 96 categorized [Lua examples](examples/lua/README.md) and 24 [C# behavior examples](src/ZuzuStudios/Gameplay/Examples/README.md).
+- 16 alternate demo scenes under [Scenes/Demos](projects/StarterProject/Assets/Scenes/Demos/README.md).
+- Project manifest, static AABB query helper, source project validator, and GitHub Actions builds.
 
-- 3D editor viewport with cubes, spheres, transform adjustment, hierarchy, inspector, fly camera, and scene save/load
-- C# behavior classes and Lua runtime
-- JSON project/scene format
-- Play/Stop scene isolation
-- Example game content and script library
-- Windows builds through GitHub Actions
+## Repository layout
 
-## Not included yet
+- `src/ZuzuStudios/Core` – scenes, entities, project files
+- `src/ZuzuStudios/Editor` – scene editor UI and camera
+- `src/ZuzuStudios/Rendering` – primitive renderer and colors
+- `src/ZuzuStudios/Scripting` – C# / Lua execution
+- `src/ZuzuStudios/Gameplay` – 27 compiled game behaviours (including examples)
+- `src/ZuzuStudios/Physics` – static AABB overlap queries
+- `projects/StarterProject` – sample game with scenes and Lua
+- `examples/lua` – 96 ready-to-copy Lua scripts
+- `docs/tutorials` – 48 beginner and intermediate lessons
+- `tools` – JSON validation tool
 
-Rigid-body physics, mesh importing, production materials/lighting, animation, VR, multiplayer, and deployable game exports are roadmap features, not implemented systems.
+## Run and build
 
-## Technology
+```sh
+dotnet run --project src/ZuzuStudios/ZuzuStudios.csproj -- --project projects/StarterProject
+dotnet build src/ZuzuStudios/ZuzuStudios.csproj -c Release
+python tools/validate_project.py projects/StarterProject
+```
 
-.NET 8, Raylib-cs, MoonSharp. NuGet dependencies are restored on the first build.
+Windows standalone app: `build-windows.bat` (artifacts under `dist/Windows`). Project Assets are separate files and must accompany builds; automatic game export and installers are not implemented.
+
+## Current limitations
+
+This is an **early prototype, not a feature-equivalent Unity replacement**. It does not currently include rigid-body simulation, mesh importing, texture authoring, animation tools, realistic lighting, audio systems, true game export packaging, multiplayer, or VR/OpenXR. The 3D objects are primitives and Lua scripts have no CPU watchdog. Use only trusted scripts and projects.
+
+Technology: .NET 8, [Raylib-cs](https://github.com/raylib-cs/raylib-cs), [MoonSharp](https://www.moonsharp.org/).
+
+[Architecture](docs/ARCHITECTURE.md) · [Lua API](docs/LUA_API.md) · [Roadmap](docs/ROADMAP.md) · [Contributing](CONTRIBUTING.md)
+
+No project license has been chosen by the repository owner. Third-party dependencies retain their own licenses.
