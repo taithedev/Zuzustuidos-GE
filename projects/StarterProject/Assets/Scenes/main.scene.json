@@ -1,0 +1,9 @@
+{
+  "Name": "First World",
+  "Entities": [
+    { "Name": "Player Cube", "Primitive": "Cube", "Position": { "X": 0, "Y": 0.75, "Z": 0 }, "Size": { "X": 1, "Y": 1, "Z": 1 }, "Color": "#6CD3FF", "Visible": true, "CSharpScript": "PlayerController" },
+    { "Name": "Floating Sphere", "Primitive": "Sphere", "Position": { "X": 3, "Y": 1.5, "Z": 0 }, "Size": { "X": 1.5, "Y": 1.5, "Z": 1.5 }, "Color": "#D8A9FF", "Visible": true, "LuaScript": "Scripts/floating.lua" },
+    { "Name": "Orbiting Sphere", "Primitive": "Sphere", "Position": { "X": -3, "Y": 1.25, "Z": 0 }, "Size": { "X": 1, "Y": 1, "Z": 1 }, "Color": "#FFCD84", "Visible": true, "CSharpScript": "OrbitBehaviour" },
+    { "Name": "Floor", "Primitive": "Cube", "Position": { "X": 0, "Y": -0.35, "Z": 0 }, "Size": { "X": 12, "Y": 0.7, "Z": 12 }, "Color": "#42546C", "Visible": true }
+  ]
+}

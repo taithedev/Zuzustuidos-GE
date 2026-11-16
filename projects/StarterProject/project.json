@@ -1,0 +1,7 @@
+{
+  "Name": "ZuzuStudios Starter Project",
+  "StartupScene": "Scenes/main.scene.json",
+  "WindowWidth": 1400,
+  "WindowHeight": 840,
+  "TargetFps": 120
+}

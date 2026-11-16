@@ -1,0 +1,32 @@
+name: Build ZuzuStudios
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  compile:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore
+        run: dotnet restore src/ZuzuStudios/ZuzuStudios.csproj
+      - name: Compile
+        run: dotnet build src/ZuzuStudios/ZuzuStudios.csproj --configuration Release --no-restore
+      - name: Publish Windows EXE
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: dotnet publish src/ZuzuStudios/ZuzuStudios.csproj -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true -o dist/Windows
+      - uses: actions/upload-artifact@v4
+        if: runner.os == 'Windows'
+        with:
+          name: ZuzuStudios-Windows
+          path: |
+            dist/Windows/
+            projects/StarterProject/
