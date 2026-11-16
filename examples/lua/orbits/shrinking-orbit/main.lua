@@ -1,0 +1,11 @@
+-- ZuzuStudios Lua example: Gradually shrink an orbit.
+-- Copy this file into your project's Assets/Scripts folder, then set LuaScript to its relative path.
+local x0, y0, z0 = 0, 0, 0
+function start()
+  x0, y0, z0 = get_x(), get_y(), get_z()
+end
+function update(dt)
+  local t=get_time()
+    local radius=math.max(.2,4-t*.25)
+    set_position(x0+math.cos(t)*radius,y0,z0+math.sin(t)*radius)
+end
