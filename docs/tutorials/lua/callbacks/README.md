@@ -19,4 +19,4 @@ dt measures seconds since the last frame. Multiply frame-based speed by dt.
 
 ## Continue
 
-Go back to the [tutorial index](../../../README.md) and choose another lesson, or try an [example Lua script](../../../../../examples/lua/README.md).
+Go back to the [tutorial index](../../README.md) and choose another lesson, or try an [example Lua script](../../../../examples/lua/README.md).
