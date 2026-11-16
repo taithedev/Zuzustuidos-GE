@@ -18,4 +18,4 @@ The dt argument is clamped to 0.1 seconds for stability.
 
 ## Continue
 
-Go back to the [tutorial index](../../../README.md) and choose another lesson, or try an [example Lua script](../../../../../examples/lua/README.md).
+Go back to the [tutorial index](../../README.md) and choose another lesson, or try an [example Lua script](../../../../examples/lua/README.md).

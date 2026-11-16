@@ -18,4 +18,4 @@ These are basic built-in primitives; mesh importing is not implemented.
 
 ## Continue
 
-Go back to the [tutorial index](../../../README.md) and choose another lesson, or try an [example Lua script](../../../../../examples/lua/README.md).
+Go back to the [tutorial index](../../README.md) and choose another lesson, or try an [example Lua script](../../../../examples/lua/README.md).

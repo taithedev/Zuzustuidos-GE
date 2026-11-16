@@ -22,4 +22,4 @@ Rebuild the C# engine, then attach CSharpScript: MyMove to an entity.
 
 ## Continue
 
-Go back to the [tutorial index](../../../README.md) and choose another lesson, or try an [example Lua script](../../../../../examples/lua/README.md).
+Go back to the [tutorial index](../../README.md) and choose another lesson, or try an [example Lua script](../../../../examples/lua/README.md).

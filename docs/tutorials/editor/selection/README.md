@@ -18,4 +18,4 @@ Picking uses simple bounding-box checks. Occlusion-accurate mesh picking is not 
 
 ## Continue
 
-Go back to the [tutorial index](../../../README.md) and choose another lesson, or try an [example Lua script](../../../../../examples/lua/README.md).
+Go back to the [tutorial index](../../README.md) and choose another lesson, or try an [example Lua script](../../../../examples/lua/README.md).
