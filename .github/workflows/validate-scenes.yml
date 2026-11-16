@@ -1,0 +1,15 @@
+name: Validate project assets
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run sample asset tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Validate demo scenes
+        run: python3 tools/validate_project.py projects/StarterProject
