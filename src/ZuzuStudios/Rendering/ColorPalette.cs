@@ -18,9 +18,9 @@ public static class ColorPalette
             if (hex is null) return Accent;
             var value = hex.TrimStart('#');
             if (value.Length != 6) return Accent;
-            return new Color(Convert.ToByte(value[..2], 16),
-                Convert.ToByte(value.Substring(2, 2), 16),
-                Convert.ToByte(value.Substring(4, 2), 16), 255);
+            return new Color((int)Convert.ToByte(value[..2], 16),
+                (int)Convert.ToByte(value.Substring(2, 2), 16),
+                (int)Convert.ToByte(value.Substring(4, 2), 16), 255);
         }
         catch { return Accent; }
     }
